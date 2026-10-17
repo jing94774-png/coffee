@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JING COFFEE - Premium artisan coffee roastery, freshly roasted beans, handcrafted espresso, cold brews and sweet treats.">
+    <title>JING COFFEE - Artisan Roastery & Coffee Shop</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fa fa-check-circle toast-icon"></i>
+        <span id="toast-message">Item added to your order!</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="nav-bar" id="navbar">
+        <div class="nav">
+            <!-- Brand Logo -->
+            <a href="#home" class="logo-name" aria-label="Jing Coffee Home">
+                <img src="coffee.png" alt="Jing Coffee Logo" class="logo-img">
+                <span class="name-product">JING <span>COFFEE</span></span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Links & Menus -->
+            <nav class="navbar-links" id="navbar-links">
+                <ul class="nav-link-list">
+                    <li class="link"><a href="#home" class="nav-link-item active">Home</a></li>
+                    <li class="link"><a href="#menu" class="nav-link-item">Menu</a></li>
+                    <li class="link"><a href="#features" class="nav-link-item">Why Us</a></li>
+                    <li class="link"><a href="#special-offer" class="nav-link-item">Special Offer</a></li>
+                    <li class="link"><a href="#reviews" class="nav-link-item">Reviews</a></li>
+                    <li class="link"><a href="#contact" class="nav-link-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Controls -->
+            <div class="nav-actions">
+                <!-- Search Box -->
+                <div class="search-div">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search coffee, drinks..." aria-label="Search coffee products">
+                    <button id="searchBtn" class="search-btn" aria-label="Search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Button -->
+                <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="home-page" id="home">
+            <div class="hero-container">
+                <div class="hero">
+                    <!-- Left: Content & CTAs -->
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span>☕ Artisan Roasted Daily</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            Freshly Brewed <br>
+                            <span class="text-gradient">Perfection</span> In Every Cup.
+                        </h1>
+                        
+                        <p class="hero-desc">
+                            Discover the rich, full-bodied aromas of single-origin beans, precision-roasted and handcrafted by master baristas to brighten your day.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="hero-actions">
+                            <a href="#menu" class="btn btn-primary">
+                                <span>Explore Menu</span>
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                            <a href="#features" class="btn btn-secondary">
+                                <i class="fa fa-play-circle"></i>
+                                <span>Our Story</span>
+                            </a>
+                        </div>
+
+                        <!-- Hero Stats Bar -->
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Organic Arabica</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <span class="stat-number">4.9 ★</span>
+                                <span class="stat-label">3,500+ Reviews</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <span class="stat-number">20 Min</span>
+                                <span class="stat-label">Fast Fresh Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Coffee Cup & Floating Glass Badges -->
+                    <div class="hero-image-wrapper">
+                        <div class="hero-glow-bg"></div>
+                        
+                        <div class="hero-image">
+                            <img src="coffee.png" alt="Signature Jing Artisan Coffee Cup" class="main-cup-img">
+                        </div>
+
+                        <!-- Floating Glass Badge 1: Top Right -->
+                        <div class="floating-badge badge-top">
+                            <div class="badge-icon">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="badge-text">
+                                <strong>Top Rated 2026</strong>
+                                <span>Favorite Espresso Choice</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Badge 2: Bottom Left -->
+                        <div class="floating-badge badge-bottom">
+                            <div class="badge-icon coffee-icon">
+                                <i class="fa fa-fire"></i>
+                            </div>
+                            <div class="badge-text">
+                                <strong>Fresh Roast</strong>
+                                <span>Roasted &lt; 24h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Highlights Section -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <i class="fa fa-seedling"></i>
+                        </div>
+                        <h3>Ethical Sourcing</h3>
+                        <p>100% sustainably harvested beans directly from fair-trade family farms.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <i class="fa fa-mug-hot"></i>
+                        </div>
+                        <h3>Master Roasting</h3>
+                        <p>Small-batch roasts calculated for balanced acidity, aroma, and silky crema.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <i class="fa fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Delivery</h3>
+                        <p>Delivered piping hot or crisp and iced in our spill-proof eco thermal packaging.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-box">
+                            <i class="fa fa-award"></i>
+                        </div>
+                        <h3>Guaranteed Quality</h3>
+                        <p>Love your coffee or we will freshly re-brew your drink free of charge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu / Product Showcase Section -->
+        <section class="menu-section" id="menu">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">OUR FRESH MENU</span>
+                    <h2 class="section-title">Handcrafted Coffee & Drinks</h2>
+                    <p class="section-desc">Selected premium blends and ice-crafted delights prepared daily with passion.</p>
+                </div>
+
+                <!-- Filter Controls Bar -->
+                <div class="filter-wrapper">
+                    <!-- Category Tabs -->
+                    <div class="category-tabs" id="categoryTabs">
+                        <button class="tab-btn active" data-category="all">All Drinks</button>
+                        <button class="tab-btn" data-category="hot">Hot Coffee</button>
+                        <button class="tab-btn" data-category="cold">Cold Brews</button>
+                        <button class="tab-btn" data-category="special">Specialty</button>
+                        <button class="tab-btn" data-category="dessert">Ice Cream & Treats</button>
+                    </div>
+
+                    <!-- Dropdown Select Filters -->
+                    <div class="filter-dropdowns">
+                        <select name="price" id="priceFilter" class="nav-select" aria-label="Filter by price">
+                            <option value="all">Price: All</option>
+                            <option value="under-4">Under $4.00</option>
+                            <option value="4-6">$4.00 - $6.00</option>
+                            <option value="over-6">$6.00+</option>
+                        </select>
+
+                        <select name="stock" id="stockFilter" class="nav-select" aria-label="Filter by availability">
+                            <option value="all">Availability: All</option>
+                            <option value="in-stock">In Stock</option>
+                            <option value="popular">Popular Favorites</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-category="hot" data-price="4.50" data-stock="in-stock" data-name="Signature White Coffee Latte">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-img-box">
+                            <img src="images/pngegg.png" alt="Signature White Coffee Latte" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Hot Coffee</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.9</span>
+                            </div>
+                            <h3 class="product-title">Signature White Latte</h3>
+                            <p class="product-desc">Velvety steamed oat milk folded over double espresso with caramel notes.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$4.50</span>
+                                <button class="btn-add-cart" onclick="addToCart('Signature White Latte', 4.50)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-category="hot" data-price="3.75" data-stock="in-stock" data-name="Artisan Americano Black">
+                        <div class="product-img-box">
+                            <img src="images/pngegg (1).png" alt="Artisan Americano Black" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Hot Coffee</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.8</span>
+                            </div>
+                            <h3 class="product-title">Artisan Americano</h3>
+                            <p class="product-desc">Pure extraction of dark roasted Arabica beans with bold, earthy notes.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$3.75</span>
+                                <button class="btn-add-cart" onclick="addToCart('Artisan Americano', 3.75)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-category="special" data-price="5.25" data-stock="in-stock" data-name="Caramel Macchiato Gold">
+                        <div class="product-badge popular-tag">Staff Pick</div>
+                        <div class="product-img-box">
+                            <img src="images/pngegg (2).png" alt="Caramel Macchiato Gold" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Specialty</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 5.0</span>
+                            </div>
+                            <h3 class="product-title">Caramel Macchiato</h3>
+                            <p class="product-desc">Espresso layered with sweet vanilla syrup, creamy foam, and buttery drizzle.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$5.25</span>
+                                <button class="btn-add-cart" onclick="addToCart('Caramel Macchiato', 5.25)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-category="cold" data-price="5.50" data-stock="in-stock" data-name="Chilled Mocha Frappe">
+                        <div class="product-img-box">
+                            <img src="images/pngegg (3).png" alt="Chilled Mocha Frappe" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Cold Brews</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.9</span>
+                            </div>
+                            <h3 class="product-title">Chilled Mocha Frappe</h3>
+                            <p class="product-desc">Belgian dark chocolate blended with crushed ice and concentrated espresso.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$5.50</span>
+                                <button class="btn-add-cart" onclick="addToCart('Chilled Mocha Frappe', 5.50)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card" data-category="cold" data-price="4.25" data-stock="in-stock" data-name="Nitro Cold Brew">
+                        <div class="product-badge">Smooth</div>
+                        <div class="product-img-box">
+                            <img src="images/pngegg (4).png" alt="Nitro Cold Brew" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Cold Brews</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.7</span>
+                            </div>
+                            <h3 class="product-title">Nitro Cold Brew</h3>
+                            <p class="product-desc">Steeped cold for 20 hours and nitrogen-infused for a stout-like creamy head.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$4.25</span>
+                                <button class="btn-add-cart" onclick="addToCart('Nitro Cold Brew', 4.25)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card" data-category="special" data-price="4.90" data-stock="in-stock" data-name="Vanilla Spanish Latte">
+                        <div class="product-img-box">
+                            <img src="images/pngegg (5).png" alt="Vanilla Spanish Latte" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Specialty</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.8</span>
+                            </div>
+                            <h3 class="product-title">Spanish Vanilla Latte</h3>
+                            <p class="product-desc">Subtly sweetened with condensed milk, infused with Madagascar vanilla beans.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$4.90</span>
+                                <button class="btn-add-cart" onclick="addToCart('Spanish Vanilla Latte', 4.90)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card" data-category="dessert" data-price="3.95" data-stock="in-stock" data-name="Artisan Vanilla Bean Gelato">
+                        <div class="product-img-box">
+                            <img src="images/pngegg (15).png" alt="Artisan Vanilla Bean Gelato" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Ice Cream</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 4.9</span>
+                            </div>
+                            <h3 class="product-title">Vanilla Bean Gelato</h3>
+                            <p class="product-desc">Silky Italian style churned ice cream with real fragrant vanilla speckles.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$3.95</span>
+                                <button class="btn-add-cart" onclick="addToCart('Vanilla Bean Gelato', 3.95)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card" data-category="dessert" data-price="6.25" data-stock="in-stock" data-name="Deluxe Espresso Sundae">
+                        <div class="product-badge popular-tag">Sweet Indulgence</div>
+                        <div class="product-img-box">
+                            <img src="images/pngegg (16).png" alt="Deluxe Espresso Sundae" loading="lazy">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-meta">
+                                <span class="product-cat">Ice Cream</span>
+                                <span class="product-rating"><i class="fa fa-star"></i> 5.0</span>
+                            </div>
+                            <h3 class="product-title">Espresso Sundae Royale</h3>
+                            <p class="product-desc">Rich double shot poured over creamy gelato scoops with roasted hazelnut wafers.</p>
+                            <div class="product-footer">
+                                <span class="product-price">$6.25</span>
+                                <button class="btn-add-cart" onclick="addToCart('Espresso Sundae Royale', 6.25)">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results State -->
+                <div class="no-results hidden" id="noResults">
+                    <i class="fa fa-coffee-bean-empty fa-2x"></i>
+                    <h3>No matching drinks found</h3>
+                    <p>Try searching for a different keyword or reset filters.</p>
+                    <button class="btn btn-secondary" onclick="resetFilters()">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Promotional Banner -->
+        <section class="special-offer" id="special-offer">
+            <div class="section-container">
+                <div class="offer-card">
+                    <div class="offer-content">
+                        <span class="offer-tag">LIMITED TIME SPECIAL</span>
+                        <h2>Get 20% Off Your First Coffee Order!</h2>
+                        <p>Join the Jing Coffee Club today. Use code <mark class="promo-code">JING20</mark> at checkout to enjoy 20% off all beverages & roasted bean packs.</p>
+                        <div class="offer-action">
+                            <a href="#menu" class="btn btn-primary">Claim Discount Now</a>
+                            <span class="offer-terms">*Valid on orders over $15. Applied automatically.</span>
+                        </div>
+                    </div>
+                    <div class="offer-visual">
+                        <img src="coffee.png" alt="Special Promo Coffee" class="offer-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials / Reviews -->
+        <section class="reviews-section" id="reviews">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">COMMUNITY LOVE</span>
+                    <h2 class="section-title">What Our Coffee Lovers Say</h2>
+                    <p class="section-desc">Over 3,500+ happy morning starts every week across our city.</p>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="review-text">"The Signature White Latte has the most incredible micro-foam texture I have ever tasted outside of Italy. Truly a work of art!"</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">SP</div>
+                            <div>
+                                <h4>Sarah Peterson</h4>
+                                <span>Verified Coffee Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card featured-review">
+                        <div class="review-stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="review-text">"Fastest delivery ever! My Nitro Cold Brew arrived crisp, ice-cold, and perfectly poured. Jing Coffee is now part of my daily routine."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">MK</div>
+                            <div>
+                                <h4>Michael Kim</h4>
+                                <span>Creative Director</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="review-text">"The espresso sundae is out of this world! You can immediately tell they only use ethical, top-grade Arabica beans. 10/10."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">EL</div>
+                            <div>
+                                <h4>Elena Lopez</h4>
+                                <span>Food & Lifestyle Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter-section">
+            <div class="section-container">
+                <div class="newsletter-box">
+                    <div class="newsletter-text">
+                        <h3>Join The Jing Coffee Club</h3>
+                        <p>Receive exclusive member tastings, private cupping invitations, and $5 off your next order.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletter(event)">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required aria-label="Your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="section-container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand Info -->
+                <div class="footer-col brand-col">
+                    <div class="logo-name">
+                        <img src="coffee.png" alt="Jing Coffee Logo" class="logo-img">
+                        <span class="name-product">JING <span>COFFEE</span></span>
+                    </div>
+                    <p class="footer-bio">
+                        Dedicated to the art of fine roasting, sustainable agriculture, and elevating your morning ritual with unforgettable coffee flavors.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#features">About Jing Coffee</a></li>
+                        <li><a href="#special-offer">Promotions</a></li>
+                        <li><a href="#reviews">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Hours -->
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Mon - Fri:</span> <strong>7:00 AM - 9:00 PM</strong></li>
+                        <li><span>Saturday:</span> <strong>8:00 AM - 10:00 PM</strong></li>
+                        <li><span>Sunday:</span> <strong>8:00 AM - 8:00 PM</strong></li>
+                        <li class="open-status"><i class="fa fa-circle text-success"></i> Open Now For Service</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div class="footer-col">
+                    <h4>Visit Our Roastery</h4>
+                    <p class="contact-info"><i class="fa fa-map-marker-alt"></i> 124 Espresso Boulevard, Roaster District</p>
+                    <p class="contact-info"><i class="fa fa-phone"></i> +1 (555) 349-2633</p>
+                    <p class="contact-info"><i class="fa fa-envelope"></i> hello@jingcoffee.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 JING COFFEE Roasters. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
